@@ -2,13 +2,11 @@ name: Build and deploy ci
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-		
     runs-on: ubuntu-latest
-
     steps:
       # https://github.com/actions/checkout
       - uses: actions/checkout@v2
@@ -30,8 +28,8 @@ jobs:
 
       - name: Deploy
         # configure an external GitHub Pages deploy workflow here
-         # https://github.com/JamesIves/github-pages-deploy-action
-        uses: JamesIves/github-pages-deploy-action@4.4.0 
+        # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
           branch: main
           folder: out
